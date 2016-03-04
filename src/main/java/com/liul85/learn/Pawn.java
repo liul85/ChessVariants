@@ -5,10 +5,17 @@ package com.liul85.learn;
  */
 public class Pawn {
 
+    private final String black = "black";
+    private final String white = "white";
+
     private String color;
 
     public Pawn(String color) {
         this.color = color;
+    }
+
+    public Pawn() {
+        this.color = white;
     }
 
     public String getColor() {

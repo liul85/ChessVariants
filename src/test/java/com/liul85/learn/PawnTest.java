@@ -16,4 +16,9 @@ public class PawnTest extends junit.framework.TestCase {
         Pawn blackPawn = new Pawn(black);
         assertEquals(black, blackPawn.getColor());
     }
+
+    public void testDefaultColor() throws Exception {
+        Pawn pawn = new Pawn();
+        assertEquals("white", pawn.getColor());
+    }
 }
