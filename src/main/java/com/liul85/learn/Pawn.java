@@ -21,4 +21,13 @@ public class Pawn {
     public String getColor() {
         return color;
     }
+
+    @Override
+    public String toString() {
+        if (color == black) {
+            return "P";
+        } else {
+            return "p";
+        }
+    }
 }

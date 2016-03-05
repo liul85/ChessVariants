@@ -12,19 +12,11 @@ public class BoardTest extends junit.framework.TestCase {
     }
 
     public void testCreateBoard() throws Exception {
-        assertEquals(0, board.getNumberOfPawn());
-    }
+        assertEquals(16, board.getNumberOfPawn());
+        assertEquals("pppppppp", board.getPrintLine(2));
+        assertEquals("PPPPPPPP", board.getPrintLine(7));
 
-    public void testAddPawnToBoard() throws Exception {
-        Pawn pawn1 = new Pawn("black");
-        Pawn pawn2 = new Pawn("white");
-        board.enroll(pawn1);
-
-        assertEquals(1, board.getNumberOfPawn());
-        assertEquals(pawn1, board.getPawn(0));
-
-        board.enroll(pawn2);
-        assertEquals(2, board.getNumberOfPawn());
-        assertEquals(pawn2, board.getPawn(1));
+        assertEquals("........\nPPPPPPPP\n........\n........\n........\n........\npppppppp\n........\n",
+                board.getDisplay());
     }
 }
