@@ -1,5 +1,7 @@
 package com.liul85.learn;
 
+import com.liul85.util.StringUtil;
+
 /**
  * Created by twcn on 3/4/16.
  */
@@ -12,11 +14,15 @@ public class BoardTest extends junit.framework.TestCase {
     }
 
     public void testCreateBoard() throws Exception {
-        assertEquals(16, board.getNumberOfPawn());
-        assertEquals("pppppppp", board.getPrintLine(2));
-        assertEquals("PPPPPPPP", board.getPrintLine(7));
+        assertEquals(32, board.getNumberOfPawn());
+        assertEquals(16, Piece.getNumber("white"));
+        assertEquals(16, Piece.getNumber("black"));
 
-        assertEquals("........\nPPPPPPPP\n........\n........\n........\n........\npppppppp\n........\n",
-                board.getDisplay());
+        String blankRank = StringUtil.appendNewLine("........");
+        assertEquals(StringUtil.appendNewLine("RNBQKBNR") +
+                StringUtil.appendNewLine("PPPPPPPP") +
+                blankRank + blankRank + blankRank + blankRank +
+        StringUtil.appendNewLine("pppppppp") +
+        StringUtil.appendNewLine("rnbqkbnr"), board.print());
     }
 }
